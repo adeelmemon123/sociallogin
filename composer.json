@@ -1,0 +1,32 @@
+{
+    "name": "adeelmemon/sociallogin",
+    "description": "For Google and other social logins",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Adeelmemon\\Sociallogin\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Adeelmemon\\Sociallogin\\AppServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "adeel memon",
+            "email": "adeel.memon03000@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "laravel/framework": "^11.31",
+        "laravel/socialite": "^5.18"
+    },
+
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
