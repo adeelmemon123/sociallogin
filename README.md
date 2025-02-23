@@ -97,3 +97,10 @@ FACEBOOK_REDIRECT_URI=http://127.0.0.1:8000/auth/oauth/facebook/callback
 
 Now your Laravel Social Login package is ready to use! 🚀
 
+
+### **1️⃣ Uninstall the Package via Composer**  
+Run the following command to uninstall the package:
+
+```sh
+composer remove adeelmemon/sociallogin
+```
