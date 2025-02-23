@@ -6,6 +6,10 @@
 Run the following command to install the package:
 
 ```sh
+composer require adeelmemon/sociallogin
+
+OR
+
 composer require adeelmemon/sociallogin:dev-main
 ```
 
