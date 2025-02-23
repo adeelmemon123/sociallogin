@@ -36,7 +36,7 @@ php artisan sociallogin:install
 
 Here is how the `User.php` model should look:
 
-![User Model]((https://github.com/adeelmemon123/sociallogin/blob/c055184d9dafbcc09e44c8ed011426742c59ee89/User.png?raw=true))
+![User Model](https://github.com/adeelmemon123/sociallogin/blob/c055184d9dafbcc09e44c8ed011426742c59ee89/User.png?raw=true)
 
 ## **Usage Guide**  
 
