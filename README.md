@@ -1,77 +1,75 @@
-# **Laravel Social Login Package**
+# **Laravel Social Login Package**  
 
-Easily integrate social login functionality into your Laravel application using this package.
+## **Installation Guide**  
 
-## **Installation Guide**
-
-### **1️⃣ Install the Package via Composer**
-
+### **1️⃣ Install the Package via Composer**  
 Run the following command to install the package:
 
 ```sh
 composer require adeelmemon/sociallogin:dev-main
 ```
 
-### **2️⃣ Run Database Migrations**
+### **2️⃣ Run Database Migrations**  
+Your package requires a `users` table with additional fields like `provider`, `provider_id`, `avatar`, etc.
 
-Your package requires additional fields like `provider`, `provider_id`, and `avatar` in the `users` table.\
-Run the migrations to update your database:
+Run the following command to update the database:
 
 ```sh
 php artisan migrate
 ```
 
-### **3️⃣ Publish Configuration**
-
-To publish the package configuration files, use the following command:
+### **3️⃣ Publish Configuration File**  
+To publish the package configuration file, run:
 
 ```sh
 php artisan vendor:publish --tag=config
 ```
 
-### **4️⃣ Install the Package**
-
-Run the installer to update your `User` model automatically:
+### **4️⃣ Install Social Login in the User Model**  
+Run the following command to automatically update the `User` model with the required `HasSocialLogin` trait and fillable properties:
 
 ```sh
 php artisan sociallogin:install
 ```
 
-## **Usage Guide**
+## **Usage Guide**  
 
-### **Redirect Users to Provider**
+### **Adding Social Login Buttons in Blade View**  
+Place the following code inside your Blade template to allow users to log in via Google, Facebook, or GitHub:
 
-Use the following route to redirect users to their selected OAuth provider:
-
-```php
-Route::get('/auth/{provider}', function ($provider) {
-    return \App\Models\User::redirectToProvider($provider);
-})->name('social.redirect');
+```html
+<a href="{{ route('social', 'google') }}" class="social-button btn-danger mb-2">
+    <i class="fab fa-google"></i> Login with Google
+</a>
+<a href="{{ route('social', 'facebook') }}" class="social-button btn-primary mb-2">
+    <i class="fab fa-facebook-f"></i> Login with Facebook
+</a>
+<a href="{{ route('social', 'github') }}" class="social-button btn-dark mb-2">
+    <i class="fab fa-github"></i> Login with GitHub
+</a>
 ```
 
-### **Handle Provider Callback**
+### **Environment Configuration**  
+Add the following environment variables in your `.env` file:
 
-Handle the provider callback and authenticate the user:
+```ini
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+GOOGLE_REDIRECT_URI=http://127.0.0.1:8000/auth/oauth/google/callback
 
-```php
-Route::get('/auth/{provider}/callback', function ($provider) {
-    return \App\Models\User::handleProviderCallback($provider);
-})->name('social.callback');
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+GITHUB_REDIRECT_URI=http://127.0.0.1:8000/auth/oauth/github/callback
+
+FACEBOOK_CLIENT_ID=your_facebook_client_id
+FACEBOOK_CLIENT_SECRET=your_facebook_client_secret
+FACEBOOK_REDIRECT_URI=http://127.0.0.1:8000/auth/oauth/facebook/callback
 ```
 
-## **Supported Providers**
+### **Final Steps**  
+- Ensure your `User` model is updated with `HasSocialLogin` and proper `$fillable` properties.
+- Make sure you have correctly configured your Google, GitHub, and Facebook apps for OAuth authentication.
+- Test the login routes to verify that authentication works as expected.
 
-✅ Google\
-✅ GitHub\
-✅ More coming soon...
-
-## **License**
-
-This package is open-source and free to use under the MIT License.
-
----
-
-🚀 \*\*Developed b[y \*\*](https://github.com/adeelmemon03000)**[Adeel M](https://github.com/adeelmemon03000)****\*\*\*\*****[emon](https://github.com/adeelmemon03000)**
-
-give me these all in the github readfile format
+Now your Laravel Social Login package is ready to use! 🚀
 
