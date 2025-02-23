@@ -104,3 +104,9 @@ Run the following command to uninstall the package:
 ```sh
 composer remove adeelmemon/sociallogin
 ```
+
+Contact
+For any inquiries or support, feel free to reach out:
+
+📧 Email: adeelmemon03000@gmail.com
+📞 Business Contact: +92 300 2630498 (WhatsApp available)
