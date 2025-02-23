@@ -4,7 +4,7 @@ namespace Adeelmemon\SocialLogin\Traits;
 
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Carbon;
+
 
 trait HasSocialLogin
 {
