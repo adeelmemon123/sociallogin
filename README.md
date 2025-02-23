@@ -18,6 +18,12 @@ Run the following command to update the database:
 php artisan migrate
 ```
 
+## **User Table Example**
+
+Here is how the `User` table should look:
+
+![User Table]([https://your-image-url-here.png](https://github.com/adeelmemon123/sociallogin/blob/main/database.png?raw=true))
+
 ### **3️⃣ Publish Configuration File**  
 To publish the package configuration file, run:
 
