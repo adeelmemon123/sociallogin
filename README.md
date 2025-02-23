@@ -32,6 +32,12 @@ Run the following command to automatically update the `User` model with the requ
 php artisan sociallogin:install
 ```
 
+## **User Model Example**
+
+Here is how the `User.php` model should look:
+
+![User Model]([https://your-image-url-here.png](https://github.com/adeelmemon123/sociallogin/blob/c055184d9dafbcc09e44c8ed011426742c59ee89/User.png))
+
 ## **Usage Guide**  
 
 ### **Adding Social Login Buttons in Blade View**  
