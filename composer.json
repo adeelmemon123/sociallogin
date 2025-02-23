@@ -1,32 +1,44 @@
 {
     "name": "adeelmemon/sociallogin",
-    "description": "For Google and other social logins",
+    "description": "A Laravel package for Google, GitHub, and other social logins.",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Adeelmemon\\Sociallogin\\": "src/"
+            "Adeelmemon\\SocialLogin\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Adeelmemon\\Sociallogin\\AppServiceProvider"
+                "Adeelmemon\\SocialLogin\\SocialLoginServiceProvider"
             ]
         }
     },
     "authors": [
         {
-            "name": "adeel memon",
+            "name": "Adeel Memon",
             "email": "adeel.memon03000@gmail.com"
         }
     ],
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^11.31",
+        "laravel/framework": "^11.0",
         "laravel/socialite": "^5.18"
     },
-
+    "autoload-dev": {
+        "psr-4": {
+            "Adeelmemon\\SocialLogin\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php artisan package:discover"
+        ],
+        "pre-uninstall-cmd": [
+            "@php artisan sociallogin:uninstall"
+        ]
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }

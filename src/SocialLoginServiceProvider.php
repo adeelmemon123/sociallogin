@@ -4,7 +4,7 @@ namespace Adeelmemon\SocialLogin;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class SocialLoginServiceProvider extends ServiceProvider
 {
 
     public function boot()
